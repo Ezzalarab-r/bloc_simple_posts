@@ -1,2 +1,2 @@
 const String languageCodeKey = 'language_cod_key';
-const String languagesAssetsPath = 'assets/lang/';
+const String languagesAssetsPath = 'assets/translations/';

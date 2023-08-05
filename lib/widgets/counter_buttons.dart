@@ -12,6 +12,7 @@ class CounterButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         FloatingActionButton(
+          heroTag: '1',
           onPressed: () {
             BlocProvider.of<CounterBloc>(context).add(CounterIncrement());
           },
@@ -19,6 +20,7 @@ class CounterButtons extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         FloatingActionButton(
+          heroTag: '2',
           onPressed: () {
             BlocProvider.of<CounterBloc>(context).add(CounterReset());
           },
@@ -26,6 +28,7 @@ class CounterButtons extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         FloatingActionButton(
+          heroTag: '3',
           onPressed: () {
             BlocProvider.of<CounterBloc>(context).add(CounterDecrement());
           },
@@ -35,5 +38,3 @@ class CounterButtons extends StatelessWidget {
     );
   }
 }
-
-class BLocProvider {}

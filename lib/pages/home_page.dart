@@ -1,8 +1,11 @@
+import 'package:bloc_simple_posts/app/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../app/app_strings.dart';
 import '../bloc/counter/counter_bloc.dart';
 import '../widgets/counter_buttons.dart';
+import 'settings_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -16,8 +19,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('bloc'),
+        title: Text(AppStrings.blocTest.tr(context)),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SettingsPage(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.settings_outlined),
+          )
+        ],
       ),
       body: Center(
         child: Column(
